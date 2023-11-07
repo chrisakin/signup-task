@@ -1,0 +1,70 @@
+<div class="">
+    <div class="overflow-y-auto">
+        <div class="text-[#000000] lg:mt-[110px] mt-[50px] font-[400]  overflow-y-auto form-header ">
+            <h2 class="text-[32px] text-center">
+                Welcome To My Task
+            </h2>
+        </div>
+        <div class=" flex items-center justify-center">
+            <div class="auth-border pt-6 mb-20">
+                <div class="mt-6 lg:ml-8 lg:mr-[54px]">
+                    <div class="">
+                        <label for="firstname" class="label-style"
+                        >First name</label
+                      >
+                      <input
+                        type="text"
+                        class="input w-full text-gray-900 focus:outline-none"
+                        placeholder="First Name"
+                        [(ngModel)]="signupData.firstName"
+                      />
+                    </div>
+                </div>
+                <div class="mt-6 lg:ml-8 lg:mr-[54px]">
+                    <div class="">
+                        <label for="lastname" class="label-style"
+                        >Last name</label
+                      >
+                      <input
+                        type="text"
+                        class="input w-full text-gray-900 focus:outline-none"
+                        placeholder="Last Name"
+                        [(ngModel)]="signupData.lastName"
+                      />
+                    </div>
+                </div>
+                <div class="mt-6 lg:ml-8 lg:mr-[54px]">
+                    <div class="">
+                    <label for="email" class="label-style"
+                    >Email</label
+                    >
+                    <input
+                        type="text"
+                        class="input w-full text-gray-900 focus:outline-none"
+                        placeholder="Email"
+                        [(ngModel)]="signupData.email"
+                    />
+                    </div>
+                </div>
+                <div class="mt-6 lg:ml-8 lg:mr-[54px]">
+                    <div class="">
+                    <label for="phonenumber" class="label-style"
+                    >Phone Number</label
+                    >
+                    <input
+                        type="text"
+                        class="input w-full text-gray-900 focus:outline-none"
+                        placeholder="Phone Number"
+                        [(ngModel)]="signupData.phoneNumber"
+                    />
+                    </div>
+                </div>
+                <div class="lg:ml-8 lg:mr-[54px] my-8 cursor-pointer">
+                    <app-auth-button (click)="signUp()">
+                        Create User
+                    </app-auth-button>
+                </div>
+            </div>
+        </div>
+    </div> 
+</div>

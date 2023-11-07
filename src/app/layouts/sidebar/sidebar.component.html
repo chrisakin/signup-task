@@ -1,0 +1,18 @@
+  <div class="h-full fixed">
+    <aside  class="hidden md:block xl:w-72 lg:w-50  h-full background rounded-l-xl">
+        <nav class="text-md py-12 font-medium text-[#344054] overflow-y-auto">
+          <div class="mt-6 text-[26px] italic text-center">
+            My Task
+          </div>
+          <ul class="flex flex-col space-y-6 ml-6 mt-12  text-[#FFFFFF] text-[18px] ">
+              <li class="pl-4 cursor-pointer " *ngFor="let items of sideItemsData"  >
+                <a (click)="clickSideNav(items)" class="flex space-x-4" [ngClass]="router.url.includes(items.urlRoutes) ? 'bg-[#FFFFFF] p-2 rounded-lg text-[#1FC188] w-[75%]': 'new'" >
+                     <span class="flex">
+                      {{items.title}}
+                     </span>
+                </a>
+              </li>    
+          </ul>
+        </nav>
+      </aside>
+  </div>

@@ -1,0 +1,65 @@
+<div class="">
+    <div class="w-full flex justify-between items-center">
+        <p class="text-lg font-medium text-gray-500 pl-5">Users Table</p>
+    </div>
+    <div class="overflow-x-auto border-t border-gray-200 m-9">
+                <table class="w-full relative text-sm text-left text-gray-500 min-w-[800px]">
+                       <thead>
+                         <tr class="text-xs text-gray-700 font-medium bg-gray-50 decoration-none whitespace-nowrap border-b border-gray-200">
+                            <td scope="col" class="pl-6 py-3 w-[20%]">
+                                <div class="flex items-center space-x-2">
+                                    <p>First Name</p>
+                                </div>
+                            </td>
+                            <td scope="col" class="pl-6 py-3 w-[20%]">
+                                <div class="flex space-x-2">
+                                   <p>Last Name</p>
+                                </div>
+                            </td>
+                            <td scope="col" class="pl-6 py-3 w-[15%]">
+                                <div class="flex space-x-2">
+                                    <p>Email</p>
+                                </div>
+                            </td>
+                            <td scope="col" class="pl-6 py-3 w-[15%]">
+                                <div class="flex space-x-2">
+                                    <p>Phone Number</p>
+                                </div>
+                            </td>
+                            <td scope="col" class="pl-6 py-3 w-[20%]">
+                                <div class="flex space-x-2">
+                                    <p>Actions</p>
+                                </div>
+                            </td>
+                            <td scope="col" class="pl-6 py-3 w-[10%]"></td>
+                        </tr>
+                       </thead>
+                    <tbody>
+                        <tr  *ngFor="let user of users " class="hover:bg-gray-100 relative bg-white cursor-pointer border-b text-sm">
+                            <td scope="row" class="w-[35%] transition-all duration-500 cursor-pointer px-6 font-medium text-gray-700 whitespace-nowrap text-sm">
+                                <div class="flex space-x-2 w-full">
+                                    <input type="checkbox" class="" />
+                                    <p  class="py-6 w-full">{{user.firstName}}</p>
+                                </div>
+                            </td>
+                            <td  class="w-[25%] px-6 py-6 whitespace-nowrap">
+                                {{ user.lastName }}
+                            </td>
+                            <td  class="w-[15%] px-6 py-6 whitespace-nowrap">
+                                {{user.email}}
+                            </td>
+                            <td  class="w-[15%] px-6 py-6 whitespace-nowrap xl:text-left text-center" >
+                               <span >
+                                {{user.phoneNumber}}
+                               </span>
+                            </td>
+                            <td class="md:px-4 lg:px-6 py-6 whitespace-nowrap xl:text-left text-center w-[10%]">
+                                <button class="bg-green-500 hover:bg-green-600 text-white font-semibold py-2 px-4 rounded" (click)="buttonAction(user, 'approve')" appPreventInvalidClick [userId]="myProfile.userId" [targetUserId]="user.userId">Approve</button>
+                                <button class="bg-yellow-500 hover:bg-yellow-600 text-white font-bold py-2 px-4 rounded" (click)="buttonAction(user,'update')" appPreventInvalidClick [userId]="myProfile.userId" [targetUserId]="user.userId">Update</button>
+                                <button class="bg-red-500 text-white font-semibold px-4 py-2 rounded-md hover:bg-red-600" (click)="buttonAction(user,'delete')" appPreventInvalidClick [userId]="myProfile.userId" [targetUserId]="user.userId">Delete</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+    </div>
+</div>

@@ -1,0 +1,53 @@
+<div class="flex items-center justify-center xl:ml-[-50px]">
+    <div class="overflow-y-auto">
+        <div class="text-[#000000] xl:mt-[150px] mt-[50px] font-[400] overflow-y-auto form-header flex items-center justify-center">
+            <div class=" mb-6">
+                <h2 class="text-[32px] text-center">
+                    Welcome Back
+                </h2>
+                <h5 class="text-[15px] mt-2">
+                    Please login to your account with your email and the temporary key sent to your email
+                </h5>
+            </div>
+        </div>
+        <div class="auth-border pt-6">
+            <div class="mt-6 lg:ml-8 lg:mr-[54px]">
+                <div class="">
+                <label for="email" class="label-style"
+                >Email Address</label
+                >
+                <input
+                    type="email"
+                    class="input w-full text-gray-900 focus:outline-none"
+                    placeholder="Email Address"
+                    [(ngModel)]="loginData.email"
+                />
+                </div>
+            </div>
+            <div class="mt-6 lg:ml-8 lg:mr-[54px]">
+                <div class="">
+                <label for="tempKey" class="label-style"
+                >Temp. Key</label
+                >
+                <div class="relative flex items-center justify-center">
+                    <input
+                    class="input w-full text-gray-900 focus:outline-none"
+                    placeholder="Temporary Key"
+                    [(ngModel)]="loginData.tempKey"
+                    (keyup.enter)="loginUser()"
+                />
+                </div>  
+                </div>
+            </div>
+            <div class="lg:ml-8 lg:mr-[54px] my-8 cursor-pointer">
+                <app-auth-button (click)="loginUser()">
+                   <span *ngIf="authService.isLoading == false"> Sign in</span>
+                   <span *ngIf="authService.isLoading == true"><app-loading-icon></app-loading-icon></span>
+                </app-auth-button>
+            </div>
+        </div>
+        <!-- <div class="poppins-font text-[14px] font-[500] mt-6 ml-3">
+            Don’t have an account? <span class="text-[#39BAE2] underline">Sign Up</span>
+        </div> -->
+       </div>
+ </div>
